@@ -49,8 +49,8 @@
 						
 						$input.attr('type', 'text');
 						$group.datetimepicker({ "format": format, "locale": local2 });
-						$input.focus(function () {
-							$group.datetimepicker('show');
+						$input.click(function () {
+							$group.datetimepicker('toggle');
 						});
 						
 						// Put data-tempus-dominus-linked="#id" on the end time
