@@ -49,9 +49,37 @@
 						
 						$input.attr('type', 'text');
 						$group.datetimepicker({ "format": format, "locale": local2 });
-						$input.click(function () {
-							$group.datetimepicker('toggle');
-						});
+						
+						if ( e.hasAttribute('data-tempus-dominus-onclick') ) {
+							$input.click(function () { $group.datetimepicker('toggle'); });
+						}
+
+						if ( e.hasAttribute('data-tempus-dominus-overlay') ) {
+							$group.css({ 'position': 'relative' });
+							$group.append('<span class="tempus-dominus-overlay"></span>');
+							var $overlay = $group.find('.tempus-dominus-overlay');
+							var overlay_fmt = e.getAttribute('data-tempus-dominus-overlay');
+							$overlay.css({
+								'position':  'absolute',
+								'top':       '5px',
+								'right':     ( $group.find('.input-group-append').height() + 10 )+'px',   // needs fixing
+								'z-index':   5,
+								'font-size': '80%',
+								'color':     '#999',
+							});
+							$input.change(function () {
+								var m = moment( $input.val() );
+								$overlay.text( m.format(overlay_fmt) );
+							});
+							$input.keyup(function () {
+								var m = moment( $input.val() );
+								$overlay.text( m.format(overlay_fmt) );
+							});
+							$group.on("change.datetimepicker", function (e) {
+								var m = moment( e.date );
+								$overlay.text( m.format(overlay_fmt) );
+							});
+						}
 						
 						// Put data-tempus-dominus-linked="#id" on the end time
 						if ( $input.attr('data-tempus-dominus-linked') ) {
