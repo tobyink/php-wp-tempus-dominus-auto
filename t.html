@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<title>Tests for Tempus Dominus Auto JS</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<h1 class="my-5">Tests for Tempus Dominus Auto JS</h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Attributes</th>
+						<th>Datetime</th>
+						<th>Date</th>
+						<th>Time</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>No attributes</th>
+						<td><input class="form-control" type="datetime"></td>
+						<td><input class="form-control" type="date"></td>
+						<td><input class="form-control" type="time"></td>
+					</tr>
+					<tr>
+						<th><code>class="no-tempus-dominus"</code></th>
+						<td><input class="form-control no-tempus-dominus" type="datetime"></td>
+						<td><input class="form-control no-tempus-dominus" type="date"></td>
+						<td><input class="form-control no-tempus-dominus" type="time"></td>
+					</tr>
+					<tr>
+						<th><code>data-tempus-dominus-onclick</code></th>
+						<td><input data-tempus-dominus-onclick class="form-control" type="datetime"></td>
+						<td><input data-tempus-dominus-onclick class="form-control" type="date"></td>
+						<td><input data-tempus-dominus-onclick class="form-control" type="time"></td>
+					</tr>
+					<tr>
+						<th><code>data-tempus-dominus-format</code></th>
+						<td><input data-tempus-dominus-format="DD/MM/YYYY h:mm a" class="form-control" type="datetime"><small class="form-text text-muted"><code>data-tempus-dominus-format="DD/MM/YYYY h:mm a"</code></small></td>
+						<td><input data-tempus-dominus-format="DD/MM/YYYY" class="form-control" type="date"><small class="form-text text-muted"><code>data-tempus-dominus-format="DD/MM/YYYY"</code></small></td>
+						<td><input data-tempus-dominus-format="h:mm a" class="form-control" type="time"><small class="form-text text-muted"><code>data-tempus-dominus-format="h:mm a"</code></small></td>
+					</tr>
+					<tr>
+						<th><code>data-tempus-dominus-overlay</code></th>
+						<td><input data-tempus-dominus-overlay="D MMM YYYY h:mm a" class="form-control" type="datetime"><small class="form-text text-muted"><code>data-tempus-dominus-overlay="D MMM YYYY h:mm a"</code></small></td>
+						<td><input data-tempus-dominus-overlay="D MMM YYYY" class="form-control" type="date"><small class="form-text text-muted"><code>data-tempus-dominus-overlay="D MMM YYYY"</code></small></td>
+						<td><input data-tempus-dominus-overlay="h:mm a" class="form-control" type="time"><small class="form-text text-muted"><code>data-tempus-dominus-overlay="h:mm a"</code></small></td>
+					</tr>
+					<tr>
+						<th><code>data-tempus-dominus-locale="es"</code></th>
+						<td><input data-tempus-dominus-locale="es" class="form-control" type="datetime"></td>
+						<td><input data-tempus-dominus-locale="es" class="form-control" type="date"></td>
+						<td><input data-tempus-dominus-locale="es" class="form-control" type="time"></td>
+					</tr>
+					<tr>
+						<th><code>data-tempus-dominus-icon</code></th>
+						<td><input data-tempus-dominus-icon="fa-calendar-check-o" class="form-control" type="datetime"><small class="form-text text-muted"><code>data-tempus-dominus-icon="fa-calendar-check-o"</code></small></td>
+						<td><input data-tempus-dominus-icon="fa-calendar-o" class="form-control" type="date"><small class="form-text text-muted"><code>data-tempus-dominus-icon="fa-calendar-o"</code></small></td>
+						<td><input data-tempus-dominus-icon="fa-hourglass" class="form-control" type="time"><small class="form-text text-muted"><code>data-tempus-dominus-icon="fa-hourglass"</code></small></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<h2 class="my-3">Linked Datetimes</h2>
+			<div class="row">
+				<div class="col"><input class="form-control" type="datetime" id="start"></div>
+				<div class="col"><input class="form-control" type="datetime" data-tempus-dominus-linked="#start"></div>
+			</div>
+			
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="js/wp-tempus-dominus-auto.js"></script>
+	</body>
+</html>
