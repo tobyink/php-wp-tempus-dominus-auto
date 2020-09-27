@@ -86,22 +86,23 @@
 							});
 							$input.change(function () {
 								var m = moment( $input.val(), format );
-								console.log("HERE1");
-								console.log(m);
 								$overlay.text( m.format(overlay_fmt) );
 							});
 							$input.keyup(function () {
 								var m = moment( $input.val(), format );
-								console.log("HERE2");
-								console.log(m);
 								$overlay.text( m.format(overlay_fmt) );
 							});
 							$group.on("change.datetimepicker", function (e) {
 								var m = e.date;
-								console.log("HERE3");
-								console.log(m);
 								$overlay.text( m.format(overlay_fmt) );
 							});
+							setInterval(
+								function () {
+									var m = moment( $input.val(), format );
+									$overlay.text( m.format(overlay_fmt) );
+								},
+								1000
+							);
 						}
 						
 						// Put data-tempus-dominus-linked="#id" on the end time
