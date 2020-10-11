@@ -94,10 +94,12 @@
 							$group.append('<span class="tempus-dominus-overlay text-muted"></span>');
 							var $overlay = $group.find('.tempus-dominus-overlay');
 							var overlay_fmt = e.getAttribute('data-tempus-dominus-overlay');
+							var h = $group.find('.input-group-append').height();
+							if ( ! h ) h = 40;
 							$overlay.css({
 								'position':  'absolute',
 								'top':       '5px',
-								'right':     ( $group.find('.input-group-append').height() + 10 )+'px',
+								'right':     ( h + 10 ) + 'px',
 								'z-index':   5,
 								'font-size': '80%',
 							});
